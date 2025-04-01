@@ -15,5 +15,8 @@ app.use('/api/users', require('./routes/userRoutes'));
 
 app.listen(process.env.PORT, () => {
   console.log(`Serveur lancé sur le port ${process.env.PORT}`);
+
+app.use('/api/products', require('./routes/productRoutes'));
+
 });
 
