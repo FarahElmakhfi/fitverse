@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { getProducts, createProduct } = require("../controllers/productController");
 
-// Exemple de route test
-router.get("/", (req, res) => {
-  res.json({ message: "Liste des produits" });
-});
+router.get("/", getProducts);
+router.post("/", createProduct);
 
 module.exports = router;

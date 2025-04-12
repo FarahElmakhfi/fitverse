@@ -3,11 +3,12 @@ const Product = require("../models/Product");
 const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    res.json(products);
+    res.json(products); // ✅ Ceci doit bien être un tableau
   } catch (err) {
     res.status(500).json({ message: "Erreur serveur", error: err });
   }
 };
+
 
 const createProduct = async (req, res) => {
   try {
