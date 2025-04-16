@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
-const generateToken = require('../utils/generateToken');
+const generateToken = require('../backend/utils/generateToken');
 
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
