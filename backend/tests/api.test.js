@@ -17,4 +17,8 @@ describe("GET /api/products", () => {
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body)).toBe(true);
   });
+
+  test('Test de base', () => {
+    expect(2 + 2).toBe(4);
+  });
 });
