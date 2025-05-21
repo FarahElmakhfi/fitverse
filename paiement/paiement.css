@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background: #0d0d0d;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🌌 Fond animé */
+.stars, .twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  z-index: -2;
+}
+
+.stars {
+  background: url('https://raw.githubusercontent.com/JulianLaval/canvas-space/master/stars.png') repeat;
+  animation: moveStars 200s linear infinite;
+}
+
+.twinkling {
+  background: url('https://raw.githubusercontent.com/JulianLaval/canvas-space/master/twinkling.png') repeat;
+  animation: moveTwinkling 300s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+@keyframes moveTwinkling {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* 💳 Carte */
+.paiement-glass {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #ff00cc;
+  width: 360px;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 8vh;
+  text-align: center;
+  color: white;
+}
+
+.paiement-glass h1 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #ff00cc;
+  text-shadow: 0 0 10px #ff00cc;
+}
+
+.glass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.9rem;
+  background: transparent;
+  border: 2px solid #ff00cc;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-half {
+  flex: 1;
+}
+
+.neon-btn {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 25px;
+  background: #ff00cc;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff00cc;
+  transition: transform 0.2s;
+}
+
+.neon-btn:hover {
+  transform: scale(1.05);
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-decoration: none;
+}

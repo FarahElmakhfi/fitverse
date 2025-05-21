@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(#9f00ff 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: stars 40s linear infinite;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+@keyframes stars {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-500px, -500px); }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #9f00ff;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #9f00ff;
+  text-shadow: 0 0 10px #9f00ff;
+}
+
+.logo span {
+  color: #fff;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #9f00ff;
+  text-shadow: 0 0 5px #9f00ff;
+}
+
+.dashboard-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.welcome {
+  font-size: 2rem;
+  color: #9f00ff;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px #9f00ff;
+}
+
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 2rem;
+  color: #9f00ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(159, 0, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #9f00ff, 0 0 60px #9f00ff;
+}
+
+.logout {
+  color: #ff4444;
+  border-color: #ff4444;
+}
+
+.logout:hover {
+  box-shadow: 0 0 30px #ff4444, 0 0 60px #ff4444;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  border-top: 1px solid #9f00ff;
+  font-size: 0.9rem;
+  color: #888;
+}
