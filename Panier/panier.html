@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Panier - TRY-ON</title>
-  <link rel="stylesheet" href="../Panier/panier.css">
+  <link rel="stylesheet" href="./panier.css" />
 </head>
 <body>
+  <!-- Barre de navigation -->
   <header class="navbar">
     <h1 class="logo">TRY-<span>ON</span></h1>
     <nav>
-      <a href="../catalogues/catalogue.html">Catalogue</a>
+      <a href="../catalogue/catalogue.html">Catalogue</a>
+      <a href="../connexion/connexion.html">Déconnexion</a>
     </nav>
   </header>
 
-  <section class="panier-section">
-    <h2>Mon Panier</h2>
+  <!-- Section principale du panier -->
+  <main class="panier-container">
+    <h2 class="panier-title"> Mon Panier</h2>
+
+    <!-- Liste des articles -->
     <div class="panier-items">
       <div class="panier-item">
-        <p>T-shirt Cyber - 35.00 €</p>
+        <div class="item-info">
+          <p class="item-name">T-shirt Cyber</p>
+          <p class="item-price">35.00 €</p>
+        </div>
         <button class="btn-neon">Retirer</button>
       </div>
-      <!-- Plus d'articles ici dynamiquement -->
+
+      <!-- Exemple d'autre produit -->
+      <div class="panier-item">
+        <div class="item-info">
+          <p class="item-name">Chaussures LED</p>
+          <p class="item-price">79.99 €</p>
+        </div>
+        <button class="btn-neon">Retirer</button>
+      </div>
     </div>
+
+    <!-- Total et actions -->
     <div class="panier-total">
-      <p>Total : 35.00 €</p>
-      <a href="../paiement/paiement.html" class="btn-neon">Passer au Paiement</a>
+      <p>Total : <span>114.99 €</span></p>
+      <a href="../paiement/paiement.html" class="btn-neon btn-full">Passer au paiement -></a>
     </div>
-  </section>
+  </main>
 
   <footer class="footer">
     &copy; 2025 TRY-ON. Tous droits réservés.

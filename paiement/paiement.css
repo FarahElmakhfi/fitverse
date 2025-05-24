@@ -11,8 +11,6 @@ body, html {
   overflow: hidden;
   position: relative;
 }
-
-/* 🌌 Fond animé */
 .stars, .twinkling {
   position: fixed;
   top: 0;
@@ -43,7 +41,7 @@ body, html {
   to { background-position: 10000px 10000px; }
 }
 
-/* 💳 Carte */
+
 .paiement-glass {
   backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.05);
