@@ -1,17 +1,10 @@
 {
   "name": "tty-on",
   "version": "1.0.0",
-  "main": "neonFactory.js",
   "scripts": {
-    "start": "live-server public"
-
+    "start": "live-server --entry-fil"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "live-server": "^1.2.2",
-    "three": "^0.175.0"
+    "live-server": "^1.2.2"
   }
 }
