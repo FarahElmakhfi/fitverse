@@ -20,7 +20,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'consultant', 'user'],
     default: 'user'
-  }
+  },
+
+  // 🟣 Champs pour mot de passe oublié
+  resetToken: String,
+  resetTokenExpire: Date
+
 }, {
   timestamps: true
 });
@@ -33,7 +38,6 @@ userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
-
 
 // compare password method
 userSchema.methods.matchPassword = async function (enteredPassword) {
