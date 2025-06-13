@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a, #000);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 2px solid #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.logo {
+  font-size: 2rem;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+nav a {
+  margin-left: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+/* Conteneur du panier */
+.panier-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 4rem 2rem;
+  flex: 1;
+}
+
+.panier-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 3rem;
+}
+
+.panier-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+}
+
+.panier-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 1rem;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.item-price {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* Total + bouton paiement */
+.panier-total {
+  margin-top: 3rem;
+  text-align: right;
+  font-size: 1.3rem;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.btn-neon {
+  padding: 0.6rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00ff00, #00cc00);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 25px #00ff00, 0 0 45px #00ff00;
+}
+
+.btn-full {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  border-top: 2px solid #00ff00;
+  color: #888;
+}

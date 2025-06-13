@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(#0f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: stars 40s linear infinite;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+@keyframes stars {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-500px, -500px); }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #0f0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+.logo span {
+  color: #fff;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.role-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 3rem 4rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
+  max-width: 500px;
+}
+
+.glass-card h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #0f0;
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-neon {
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #51e251, 0 0 30px #d9e0d9;
+  color: #000;
+  background: #0f0;
+}
+
+.btn-neon:hover {
+  background: #0d0;
+  box-shadow: 0 0 25px #0f0, 0 0 45px #0f0;
+}
+
+.btn-neon.admin {
+  background: #ff0080;
+  box-shadow: 0 0 15px #ff0080, 0 0 30px #c4bfc2;
+}
+
+.btn-neon.admin:hover {
+  background: #e60073;
+  box-shadow: 0 0 25px #ff0080, 0 0 45px #ff0080;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  border-top: 1px solid #0f0;
+  font-size: 0.9rem;
+  color: #888;
+}
