@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📂 Mes commandes - TRY-ON</title>
+  <link rel="stylesheet" href="../dashboard-utilisateur/dashboard-utilisateur.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background-color: rgba(255,255,255,0.05);
+      color: white;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+    }
+    th {
+      background-color: #9f00ff;
+    }
+    .profile {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      background-color: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">TRY-<span>ON</span></h1>
+    <nav>
+      <a href="../dashboard-utilisateur/dashboard-utilisateur.html">Dashboard</a>
+      <a href="../connexion/connexion.html">Déconnexion</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-section">
+    <h2 class="welcome">📂 Mes commandes</h2>
+    
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1234</td>
+              <td>2025-06-10</td>
+              <td>499 MAD</td>
+              <td>Livrée</td>
+            </tr>
+          </tbody>
+        </table>
+        
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 TRY-ON. Tous droits réservés.
+  </footer>
+</body>
+</html>

@@ -40,11 +40,9 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 
       // Redirection selon le rôle
       if (selectedRole === 'admin') {
-        window.location.href = "/fitverse/frontend/fitverse-farah/dashboard-admin/dashboard-admin.html";
-
+        window.location.href = '../dashboard-admin/dashboard.html';
       } else {
-        window.location.href = "/fitverse/frontend/fitverse-farah/dashboard-utilisateur/dashboard-utilisateur.html";
-
+        window.location.href = '../dashboard-utilisateur/dashboard.html';
       }
 
     } else {

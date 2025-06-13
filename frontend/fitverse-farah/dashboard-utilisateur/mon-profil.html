@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧾 Mon profil - TRY-ON</title>
+  <link rel="stylesheet" href="../dashboard-utilisateur/dashboard-utilisateur.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background-color: rgba(255,255,255,0.05);
+      color: white;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+    }
+    th {
+      background-color: #9f00ff;
+    }
+    .profile {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      background-color: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">TRY-<span>ON</span></h1>
+    <nav>
+      <a href="../dashboard-utilisateur/dashboard-utilisateur.html">Dashboard</a>
+      <a href="../connexion/connexion.html">Déconnexion</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-section">
+    <h2 class="welcome">🧾 Mon profil</h2>
+    
+        <div class="profile">
+          <p><strong>Nom:</strong> Aymane Ouazer</p>
+          <p><strong>Email:</strong> aymane@example.com</p>
+          <p><strong>Mot de passe:</strong> ******** <button>Modifier</button></p>
+        </div>
+        
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 TRY-ON. Tous droits réservés.
+  </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector("button");
+    button.addEventListener("click", function () {
+      alert("Fonction de modification du mot de passe à implémenter.");
+    });
+  });
+</script>
+</body>
+</html>

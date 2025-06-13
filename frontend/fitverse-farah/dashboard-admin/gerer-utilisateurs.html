@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gérer les Utilisateurs - TRY-ON</title>
+  <link rel="stylesheet" href="../dashboard-admin/dashboard-admin.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background-color: rgba(255,255,255,0.05);
+      color: white;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+    }
+    th {
+      background-color: #9f00ff;
+    }
+    .add-form {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .add-form input {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+    .add-button {
+      background-color: #9f00ff;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .add-button:hover {
+      box-shadow: 0 0 10px #9f00ff;
+    }
+    button.action {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    input.inline-edit {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">TRY-<span>ON</span></h1>
+    <nav>
+      <a href="../dashboard-admin/dashboard-admin.html">Dashboard</a>
+      <a href="../connexion/connexion.html">Déconnexion</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-section">
+    <h2 class="welcome">👥 Gérer les Utilisateurs</h2>
+
+    <form class="add-form" id="userForm">
+      <input type="text" id="userName" placeholder="Nom de l'utilisateur" required />
+      <input type="email" id="userEmail" placeholder="Email" required />
+      <input type="text" id="userRole" placeholder="Rôle" required />
+      <button type="submit" class="add-button">➕ Ajouter</button>
+    </form>
+
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Rôle</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 TRY-ON. Tous droits réservés.
+  </footer>
+
+  <script>
+    async function fetchUsers() {
+      try {
+        const res = await fetch("http://localhost:5000/api/users");
+        const data = await res.json();
+        const tbody = document.querySelector("#userTable tbody");
+        tbody.innerHTML = "";
+        data.forEach(user => {
+          tbody.innerHTML += `
+            <tr>
+              <td>#${user._id}</td>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
+              <td>${user.role}</td>
+              <td>
+                <button class="action" onclick="editUser('${user._id}', this)">Modifier</button>
+                <button class="action" onclick="deleteUser('${user._id}')">Supprimer</button>
+              </td>
+            </tr>
+          `;
+        });
+      } catch (err) {
+        console.error("Erreur de chargement :", err);
+      }
+    }
+
+    document.getElementById('userForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const role = document.getElementById('userRole').value.trim();
+      if (!name || !email || !role) return alert("Veuillez remplir tous les champs.");
+
+      await fetch("http://localhost:5000/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, role })
+      });
+
+      this.reset();
+      fetchUsers();
+    });
+
+    async function deleteUser(id) {
+      if (confirm("Supprimer cet utilisateur ?")) {
+        await fetch(`http://localhost:5000/api/users/${id}`, { method: "DELETE" });
+        fetchUsers();
+      }
+    }
+
+    async function editUser(id, btn) {
+      const row = btn.closest("tr");
+      const nameCell = row.children[1];
+      const emailCell = row.children[2];
+      const roleCell = row.children[3];
+
+      if (btn.textContent === "Modifier") {
+        const name = nameCell.textContent;
+        const email = emailCell.textContent;
+        const role = roleCell.textContent;
+
+        nameCell.innerHTML = `<input class='inline-edit' value='${name}'>`;
+        emailCell.innerHTML = `<input class='inline-edit' value='${email}'>`;
+        roleCell.innerHTML = `<input class='inline-edit' value='${role}'>`;
+        btn.textContent = "Enregistrer";
+      } else {
+        const updated = {
+          name: nameCell.querySelector("input").value,
+          email: emailCell.querySelector("input").value,
+          role: roleCell.querySelector("input").value
+        };
+
+        await fetch(`http://localhost:5000/api/users/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updated)
+        });
+
+        btn.textContent = "Modifier";
+        fetchUsers();
+      }
+    }
+
+    fetchUsers();
+  </script>
+</body>
+</html>
