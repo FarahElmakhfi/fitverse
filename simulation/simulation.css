@@ -1,14 +1,31 @@
-
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #0d0d0d;
+  background: #000;
+  font-family: 'Orbitron', sans-serif;
+  color: #0f0;
 }
 
-#renderCanvas {
-  width: 100vw;
-  height: 100vh;
-  display: block;
-  background: radial-gradient(circle at center, #111, #0d0d0d);
+header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background: #111;
+  border-bottom: 1px solid #0f0;
 }
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: #111;
+  padding: 1rem;
+  border-bottom: 1px solid #0f0;
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+
